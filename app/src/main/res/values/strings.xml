@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">lesson6</string>
+    <string name="app_name">ToDo List</string>
+    <string name="Add">+</string>
+    <string name="datetimeFormat">yyyy-MM-dd HH:mm</string>
+    <string name="FALSE">FALSE</string>
+    <string name="TRUE">TRUE</string>
+    <string name="ChangeTaskButton">Change task</string>
+    <string name="DoneButton">Done</string>
 </resources>

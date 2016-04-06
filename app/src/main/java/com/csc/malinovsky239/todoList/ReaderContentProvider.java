@@ -1,4 +1,4 @@
-package com.csc.lesson6;
+package com.csc.malinovsky239.todoList;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 public class ReaderContentProvider extends ContentProvider {
-    public static final String AUTHORITY = "com.csc.lesson6";
+    public static final String AUTHORITY = "com.csc.malinovsky239.todoList.ReaderContentProvider";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     public static final int ENTRIES = 1;
@@ -83,7 +83,15 @@ public class ReaderContentProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
-        // TODO: Implement this to handle requests to update one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        int match = uriMatcher.match(uri);
+        String tableName;
+        switch (match) {
+            case ENTRIES:
+                tableName = FeedsTable.TABLE_NAME;
+                break;
+            default:
+                throw new UnsupportedOperationException("Not yet implemented");
+        }
+        return helper.getWritableDatabase().update(tableName, values, selection, null);
     }
 }
