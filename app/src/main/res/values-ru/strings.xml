@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Список задач</string>
+    <string name="ChangeTaskButton">Изменить задачу</string>
+    <string name="DoneButton">Готово</string>
+    <string name="Add">Добавить</string>
+</resources>
